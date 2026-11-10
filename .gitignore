@@ -1,0 +1,7 @@
+# P2A_SQLite exclude subfolders
+.archiv/*
+.doc_AH_intern/*
+# Don't expose P2A Database nor Makerwys files
+data/*
+MSFS2020_Makerwys
+# End of list
