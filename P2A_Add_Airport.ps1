@@ -99,24 +99,31 @@
 		The following steps have to be done each time you add an ICAO ID.
 
 		7. Run the script in a non-Admin Powershell.
+		
 			It works only in the created P2A_AddAP folder, nothing is changed in Pilot2ATC
+			
 			> E:
 			> cd \work\P2A_AddAP
 			> .\P2A_Add_Airport.ps1 zgwz
-				10.11.26 03:37:53 === P2A_Add_Airport.ps1 V0.9 init ===
-				10.11.26 03:37:53 Backup exists for file E:\work\P2A_AddAP\data\P2ADynamicData.db ?
-				??? Please answer Y or N : n
+				13.11.26 03:59:21 === P2A_Add_Airport.ps1 V1.1 init ===
+				13.11.26 03:59:21 Backup exists for file C:\Users\Achim\Git_Repos_AH1\P2A_SQLite\data\P2ADynamicData.db ?
+				??? Please answer Y or N :
 			Enter	-> Y (if running outside your real P2A folder as done in this example)
 			Enter	-> N (if running against your P2A Data folder)
 			or use last parameter "bkupdone" to avoid this question at all
 				...
-				10.11.26 03:16:53 ZGWZ Airport Name is empty, please tell it or just press ENTER key
-				??? Airport Name (or ENTER key for none) : 
+				13.11.26 03:59:23 Processing 1 ICAO IDs
+				13.11.26 03:59:23 === Loading C:\Users\Achim\Git_Repos_AH1\P2A_SQLite\msfs2020_Makerwys\runways.xml ===
+				13.11.26 03:59:23 === Processing ICAO-ID [zgwz] ===
+				...
+				13.11.26 03:59:24 --- Check for missing parameters of ICAO ID ZGWZ ---
+				13.11.26 03:59:24 ZGWZ Airport Name is empty, please tell it or just press ENTER key
+				??? Airport Name (or ENTER key for none) :
 			Enter	-> Wuzhou Changzhoudao
-				10.11.26 03:16:53 ZGWZ Airport City is empty, please tell it or just press ENTER key
-				??? Airport City (or ENTER key for none) : Wuzhou Changzhoudao
+				13.11.26 03:59:24 ZGWZ Airport City is empty, please tell it or just press ENTER key
+				??? Airport City (or ENTER key for none) :
 			Enter	-> Wuzhou
-				10.11.26 03:27:18 Inserting these airport data in P2A DB airports
+				13.11.26 03:59:39 Inserting these airport data in P2A DB airports
 				ICAO:           [ZGWZ]
 				Name:           [WUZHOU CHANGZHOUDAO]
 				City:           [Wuzhou]
@@ -125,39 +132,62 @@
 				Elevation:      [86.66]
 				MagVar:         [0.000]
 				TransAlt:       [0]
-				??? Add ICAO ID ZGWZ to DB airports ? Please answer Y or N :				
+				??? Add ICAO ID ZGWZ to DB airports ? Please answer Y or N : y
 			Enter	-> Y
-				...
-				10.11.26 03:48:04 Read back DB airport table airports for ICAO ID ZGWZ
+				13.11.26 03:59:39 --- Add ICAO ID ZGWZ to database airports ---
+				13.11.26 03:59:40 Prepare DB INSERT for ICAO ID ZGWZ
+				13.11.26 03:59:40 Read back DB airport table airports for ICAO ID ZGWZ
 				Id                 : 17159
 				Name               : WUZHOU CHANGZHOUDAO
 				ICAO_Code          : ZGWZ
-				...
-				10.11.26 03:28:53 --- Processing runway  RW18  for ICAO ID ZGWZ ---
-				Runway RW18 for Airport DB-ID 17159
-						Elevation 86.66, Length 5892, Width 235.68, Heading: 179.999
-						PatternAltitude 305, Takeoff enabled = 1, Landing enabled = 1
-						Pos Lat: 23.464727, Pos Long 111.248138 Type 1
-				10.11.26 03:48:04 Read back DB runway table runways for Airport DB-ID 17159
-				Id                    : 42531
-				Name                  : RW18
-				...
-				10.11.26 03:28:53 --- Processing runway  RW36  for ICAO ID ZGWZ ---
+				Elevation          : 86,66
+				MagVar             : 0
+				Position_Latitude  : 23,456654
+				Position_Longitude : 111,248138
+				CountryCode        :
+				Country            :
+				City               : Wuzhou
+				State              :
+				UserModified       :
+				TransitionAltitude : 0
+				13.11.26 03:59:40 Processing runways for Airport ZGWZ with DB-ID 17159
+				13.11.26 03:59:40 --- Processing runway  RW18  for ICAO ID ZGWZ ---
 				Runway RW18 for Airport DB-ID 17159
 					Elevation 86.66, Length 5892, Width 235.68, Heading: 179.999
 					PatternAltitude 305, Takeoff enabled = 1, Landing enabled = 1
 					Pos Lat: 23.464727, Pos Long 111.248138 Type 1
-				10.11.26 03:48:04 Read back DB runway table runways for Airport DB-ID 17159
-					Id                    : 42531
-					Name                  : RW18
+				13.11.26 03:59:40 Read back DB runway table runways for Airport DB-ID 17159
+				Id                    : 42531
+				Name                  : RW18
+				Elevation             : 86,66
+				Length                : 5892
+				Width                 : 235,68
+				SurfaceType           :
+				Heading               : 179,999
 				...
-				10.11.26 03:28:53 === List of successfully processed airports and their runways, each with DB-ID ===
+				Airport_Id            : 17159
+				13.11.26 03:59:40 --- Processing runway  RW36  for ICAO ID ZGWZ ---
+				Runway RW36 for Airport DB-ID 17159
+					Elevation 86.66, Length 5892, Width 235.68, Heading: 359.999
+					PatternAltitude 305, Takeoff enabled = 1, Landing enabled = 1
+					Pos Lat: 23.448565, Pos Long 111.248138 Type 1
+				13.11.26 03:59:40 Read back DB runway table runways for Airport DB-ID 17159
+				Id                    : 42532
+				Name                  : RW36
+				Elevation             : 86,66
+				Length                : 5892
+				Width                 : 235,68
+				SurfaceType           :
+				Heading               : 359,999
+				...
+				Airport_Id            : 17159
+				13.11.26 03:59:40 === List of successfully processed airports and their runways, each with DB-ID ===
 				->   ZGWZ[17159] RW18[42531] RW36[42532]
-				10.11.26 03:28:53 === P2A_Add_Airport.ps1 V0.9 ended ===
-				
-		8. Backup original P2A V3 file Data\P2ADynamicData.db
-			Then copy the above modified P2ADynamicData.db to the original P2A V3 folder
+				13.11.26 03:59:40 === P2A_Add_Airport.ps1 V1.1 ended ===			
 			
+		8. Backup original P2A V3 file Data\P2ADynamicData.db
+			
+			Then copy the above modified P2ADynamicData.db to the original P2A V3 folder
 		9. Start Pilot2ATC V3 RC4
 			Enter ZGWZ in a flight plan or import flight plan containing airport ZGWZ, it should work now
 			Locate ZGWZ in the map on the left side, there should be an airport symbol
@@ -235,10 +265,11 @@
 		261001a	AH	- V0.9 Initial Version
 		261110a	AH	- V1.0 Example and Corrections. Tested in live environment MSFS 2020 / P2A V3 RC4
 		261113a	AH	- V1.1 Small correction in documentation in script header
+		261113b	AH	- V1.2 Further documentation corrections; avoid printing retcode by assigning it (then checking it too)
 #>
 
 # ### Init ###
-	$myver = "V1.1"			# Version of this script
+	$myver = "V1.2"			# Version of this script
 	$myScrNm = $MyInvocation.MyCommand
 	$mypath = Get-Location
 
@@ -722,6 +753,7 @@ write-host "###DEBUG### End"
 						write-host ("$timestmp Error in table runways: runway DB-ID for airports DB-ID" + $rwAirport_ID + " and RW-Name + " + $rwName + " is empty, please check manually")
 					}
 # End of "foreach $aprunway" loop
+write-host "END FOREACH aprunway"	# ###DEBUG###
 				}
 				
 			} else {
@@ -738,10 +770,13 @@ write-host "###DEBUG### End"
 # Add element with processed airport and its runways to ArrayList if not empty
 #
 		if ( -not [String]::IsNullOrEmpty($procarrelem)) {
-			$procarraprw.add($procarrelem)		# Array of processed airports and their runways
+			$retcode = $procarraprw.add($procarrelem)		# Array of processed airports and their runways
+			if ( $retcode -ne 0 ) {
+				$timestmp = Get-Date -format "dd.MM.yy hh:mm:ss"
+				write-host ( "$timestmp Error adding processed airport [$procarrelem] to result list" )
+			}
 		}
-
-# End of "for $parmctr" loop	
+# End of "for $parmctr" loop
 	}
 
 #
