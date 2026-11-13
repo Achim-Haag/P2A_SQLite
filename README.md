@@ -279,7 +279,7 @@ It works only in the created P2A_AddAP folder, nothing is changed in Pilot2ATC
 ​	​	13.11.26 03:59:40 === P2A_Add_Airport.ps1 V1.1 ended ===
 ```
       
-8. Backup __original__ P2A V3 file Data\*__P2ADynamicData.db__*<br/>
+8. Backup __original__ P2A V3 file Data\\*__P2ADynamicData.db__*<br/>
    Then copy the __above modified *P2ADynamicData.db* to the original P2A V3 folder__
    
 9. Start Pilot2ATC V3 RC4<br/>
