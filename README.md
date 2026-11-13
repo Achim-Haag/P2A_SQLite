@@ -5,12 +5,12 @@
 
 ## Problem 
 
-Pilot2ATC Version 3 Database filled with Navigraph Data doesn't contain all airports available in MSFS 2020,
-e.g. Chinese Airport ZGWZ Wuzhou (for checkerboard approach to VHHX Kai Tak ;-)
+Pilot2ATC Version 3 Database filled with Navigraph Data doesn't contain all airports available in MSFS 2020,<br/>
+e.g. Chinese Airport ZGWZ Wuzhou (for checkerboard approach to VHHX Kai Tak :sunglasses: ...um... :fearful:)
 
 ## Solution
 
-Extract data of missing airports from runways.xml created by Peter Dowson's fine utility [Makerwys] (https://fsuipc.com/downloadspage/)
+Extract data of missing airports from runways.xml created by Peter Dowson's fine utility [Makerwys](https://fsuipc.com/downloadspage/)
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Extract data of missing airports from runways.xml created by Peter Dowson's fine
 - [MSFS 2020](https://store.steampowered.com/app/1250410/Microsoft_Flight_Simulator_2020_40th_Anniversary_Edition/?l=german) as of September 2026
 - PSSqlite
    - Installed once by Powershell-Command `Install-Module -Name PSSQLite` from [Powershell Gallery](https://www.powershellgallery.com/packages/PSSQLite/1.1.0)
-   - If `Get-PSRepository` returns *PSGallery Untrusted `https://www.powershellgallery.com/api/v2`*,<br/>the Command `Install-Module` should be able to find and download the PSSQLite module.
+   - If `Get-PSRepository` returns msg *`PSGallery Untrusted https://www.powershellgallery.com/api/v2`*,<br/>the Command `Install-Module` should be able to find and download the PSSQLite module.
    - Last resort: explicit download the module from the source website (although I couldn't find out what),<br/>see [Github RamblingCookieMonster: PSSQQlite](https://github.com/RamblingCookieMonster/PSSQLite/tree/master/PSSQLite)
    - After "Install-Module", PSSQlite will be imported automatically if correctly installed,<br/>but this script does an Import-Module by itself to check its existence
 
@@ -41,8 +41,6 @@ Create the following structure in a work folder with this script ($PSScriptRoot)
 - One or more __ICAO IDs__ separated by space
 - Optional last parameter __*bkupdone*__ avoids *Backup P2A DB done?* question
 - Optional last parameter __*debug*__ for additional messages (mutually exclusive to *bkupdone*)
-
-
 
 ## Start of script
 
@@ -190,8 +188,9 @@ CREATE INDEX [Runways_IX_FK_AirportRunway]
    > exit
 ```
 
-The above steps have to be done once.<br/>
-The following steps have to be done each time you add an ICAO ID.
+> [!NOTE]  
+> The above steps have to be done once.<br/>
+> The following steps have to be done each time you add an ICAO ID.
 
 7. Run the script in a non-Admin Powershell.
 It works only in the created P2A_AddAP folder, nothing is changed in Pilot2ATC
