@@ -120,6 +120,7 @@
 				ICAO:           [ZGWZ]
 				Name:           [WUZHOU CHANGZHOUDAO]
 				City:           [Wuzhou]
+				Longitude:      [111.248138}
 				Latitude:       [23.456654]
 				Elevation:      [86.66]
 				MagVar:         [0.000]
@@ -230,13 +231,14 @@
 		CREATE INDEX [Runways_IX_FK_AirportRunway]
 			ON [Runways]	([Airport_Id] DESC);
 		
-	--- Modifications ---
+	--- Modifications (change $myver below accordingly) ---
 		261001a	AH	- V0.9 Initial Version
 		261110a	AH	- V1.0 Example and Corrections. Tested in live environment MSFS 2020 / P2A V3 RC4
+		261113a	AH	- V1.1 Small correction in documentation in script header
 #>
 
 # ### Init ###
-	$myver = "V1.0"			# Version of this script
+	$myver = "V1.1"			# Version of this script
 	$myScrNm = $MyInvocation.MyCommand
 	$mypath = Get-Location
 
